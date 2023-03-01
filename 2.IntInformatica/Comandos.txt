@@ -185,3 +185,4 @@ git config pull.ff only       # solo avance rápido
 
 (base) SamuelPerez@MacBook-Air-de-Samuel Primera Entrega % git add .
 (base) SamuelPerez@MacBook-Air-de-Samuel Primera Entrega % git commit -m "1Commit_Mochila_PerezSamuel"
+(base) SamuelPerez@MacBook-Air-de-Samuel Primera Entrega % git push origin Perez_Samuel
