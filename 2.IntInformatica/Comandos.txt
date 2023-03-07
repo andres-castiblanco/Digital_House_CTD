@@ -1,4 +1,11 @@
 Gitignore DS_store: https://www.youtube.com/watch?v=tnsSiEpPAcI 
+                    https://www.linkedin.com/pulse/how-remove-dsstore-files-from-git-repositories-chandan-thakur/
+
+echo .DS_Store >> ~/.gitignore_global                       // previene la creacion de archivos en el home directory
+git config --global core.excludesfile ~/.gitignore_global   // previene la creacion de archivos en el home directory
+
+find . -name .DS_Store -print0 | xargs -0 git rm --ignore-unmatch   // ignorar .DS_Store en repo ya creado
+git rm --cached .DS_Store       // ignorar .DS_Store en carpeta ya creado
 
 **Actividad con Terminal**
 
