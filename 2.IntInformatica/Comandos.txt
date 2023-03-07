@@ -1,4 +1,4 @@
-Gitignore DS_store: https://www.youtube.com/watch?v=tnsSiEpPAcI
+Gitignore DS_store: https://www.youtube.com/watch?v=tnsSiEpPAcI 
 
 **Actividad con Terminal**
 
