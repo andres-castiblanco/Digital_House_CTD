@@ -1,0 +1,50 @@
+*{
+    box-sizing: border-box;
+    background-color: rgba(230, 230, 230, 1);
+    }
+
+h1{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 35px;color: rgba(0, 86, 119, 1);
+    background-color: rgba(196, 196, 196, 1);
+    font-weight: bold;text-align: center;
+    }
+
+body{
+    background-color: white;
+    }
+
+h3{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;color: rgba(0, 86, 119, 1);
+    background-color: rgba(196, 196, 196, 1);
+    font-weight: bold;
+    }
+
+.negrita{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    color: black;
+    font-weight: bold;
+    font-style: italic;
+    }
+
+.datos{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    color: black;
+    font-weight: bold;
+    }
+
+p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    }
+
+#footer{
+    font-family: 'Times New Roman', Times, serif;
+    color: rgba(255, 255, 255, 1);
+    font-size: 20px;font-weight: 700;
+    background-color: rgba(0, 86, 119, 1); 
+    text-align: center;
+    }
