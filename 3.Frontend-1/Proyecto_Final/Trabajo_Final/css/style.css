@@ -310,10 +310,11 @@ section article img{
 .container-8{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     padding: 80px 80px;
     color: white;
+    background: #8B48BF;
     
 }
 
@@ -448,18 +449,17 @@ input {
         justify-content: center;
         align-items: center;
         padding: 0px 0px;
-        margin: 10px;
         color: white;
         background: #3CDDF3;
     }
-    
+
     .section {
         display: flex;
         order: 0;
         flex-grow: 0;
         padding: 20px 80px;
     }
-    
+
     .section img{
         width: 400px;
         justify-content: center;
@@ -467,14 +467,12 @@ input {
     }
     .contact{
         display: none;
-        
     }
-
-    .btn .border .border-2{
+    
+    .border-2{
         display: flex;
         justify-content: right;
     }
-
 
     .section-2 {
         flex: none;
@@ -498,10 +496,8 @@ input {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 0px 0px;
-        margin: 10px;
-        color: white;
-        background: #FAFAFA;
+        padding: 10px 10px;
+        background: white;
     }
 
     .container-4{
@@ -510,9 +506,7 @@ input {
         justify-content: center;
         align-items: center;
         padding: 0px 0px;
-        margin: 10px;
-        color: white;
-        background: #FAFAFA;
+        background: white;
     }
 
     .container-5 h2{
@@ -537,4 +531,58 @@ input {
         color: #B3B2B7;
         background: #FAFAFA;
     }
+
+    .container-8{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 80px 80px;
+        color: white;
+        background: #3CDDF3; 
+    }
+    .section-8 {
+        flex: none;
+        width: auto;
+        order: 0;
+        flex-grow: 0;
+    }
+
+    .section-8 h3{
+        display: flex;
+        font-size: 36px;
+        text-align: center;
+        font-weight: bold;
+    }
+    .section-8 p{
+        font-size: 16px;
+        justify-content: center;
+    }
+
+    .btn-3 {
+        text-align: center;
+        padding: 15px 32px;
+        border-radius: 80px;
+        background: #232C50;
+        color: white;
+    }
+
+    footer{
+        background: var(--primaryColor);
+        color: #FFFFFF;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        justify-content: space-around;
+        align-items: center;
+        background: #1E1E26;
+    }
+
+    .footer-1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: none;
+    }
+
 }
