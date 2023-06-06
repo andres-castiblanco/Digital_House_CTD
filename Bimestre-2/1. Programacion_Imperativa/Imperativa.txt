@@ -1,0 +1,58 @@
+Imperativa
+
+npm i prompt-sync   instalar el módulo Prompt Sync
+let                 para definir variables, que puede ser cambiadas a lo largo del codigo
+const               para definir constante, que NO puede ser cambiadas a lo largo del codigo
+
+Tipo de Dato
+let edad = 32;                      Numéricos (number)
+let nombre = 'Mamá Luchetti';       Cadenas de caracteres (string)
+let laCharlaEstaReCopada = true;    Lógicos o booleanos (boolean)
+let hayAsadoAlFinal = false;|       Lógicos o booleanos (boolean)
+let temperatura = null;             Null (valor nulo)
+
+Operadores
+    Asignacion
+
+let edad = 35;      Asigna el número 35 a edad
+    Aritmeticos
+
+10 + 15             Suma → 25
+10 - 15             Resta → -5
+10 * 15             Multiplicación → 150
+15 / 10             División → 1.5
+15++                Incremento, es igual a 15 + 1 → 16
+15--                Decremento, es igual a 15 - 1 → 14
+15 % 5              Módulo, el resto de dividir 15 entre 5 → 0
+15 % 2              Módulo, el resto de dividir 15 entre 2 → 1
+    Concatenacion
+
+let nombre = 'Teodoro';
+let apellido = 'García';
+let nombreCompleto = 'Me llamo ' + nombre + ' ' + apellido;
+    Comparación simple -> Comparan dos valores
+
+10 == 15            Igualdad → false
+10 != 15            Desigualdad → true
+    Comparación estricta -> Comparan el valor y el tipo de dato también.
+
+10 === "10"         Igualdad estricta → false
+10 !== 15           Desigualdad estricta → true
+
+15 > 15             Mayor que → false
+15 >= 15            Mayor o igual que → true
+10 < 15             Menor que → true
+10 <= 15            Menor o igual que → true
+
+Funciones
+    Funciones declaradas -> Son aquellas que se declaran usando la estructura básica. 
+
+function saludar(nombre) {
+	return 'Hola' + nombre;
+}
+
+    Funciones expresadas -> Son aquellas que se asignan como valor de una variable.
+let triplicar = function (numero) {
+	return numero * 3;
+}
+

@@ -1,0 +1,69 @@
+CREATE SCHEMA `Spotify` ;
+
+---
+CREATE TABLE `Spotify`.`USUARIO` (
+  `usuario_id` INT NOT NULL AUTO_INCREMENT,
+  `email` VARCHAR(100) NOT NULL,
+  `contrasenna` VARCHAR(100) NOT NULL,
+  `fecha_nacimiento` DATE NOT NULL,
+  `sexo` VARCHAR(20) NOT NULL,
+  `codigo_postal` INT NOT NULL,
+  `pais_usuario` VARCHAR(100) NOT NULL,
+  `tipo_suscripcion` VARCHAR(20) NOT NULL,
+  PRIMARY KEY (`usuario_id`),
+  UNIQUE INDEX `idUsuario_UNIQUE` (`usuario_id` ASC) VISIBLE);
+
+---
+CREATE TABLE `Spotify`.`CANCIONES` (
+  `cancion_id` INT NOT NULL AUTO_INCREMENT,
+  `titulo_cancion` VARCHAR(100) NOT NULL,
+  `duracion` INT(10) NOT NULL,
+  `reproducciones` BIGINT(15) NOT NULL,
+  `likes` BIGINT(13) NOT NULL,
+  `genero` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`cancion_id`));
+
+---
+CREATE TABLE `Spotify`.`Playlists` (
+  `playlists_id` INT NOT NULL AUTO_INCREMENT,
+  `titulo_playlists` VARCHAR(100) NOT NULL,
+  `numero_canciones` INT NOT NULL,
+  `fecha_creacion` DATE NOT NULL,
+  `eliminada` TINYINT(1) NOT NULL,
+  `fecha_eliminacion` DATE NOT NULL,
+  PRIMARY KEY (`playlists_id`),
+  UNIQUE INDEX `playlists_id_UNIQUE` (`playlists_id` ASC) VISIBLE);
+
+---
+CREATE TABLE `Spotify`.`Validacion` (
+  `validacion_id` INT NOT NULL AUTO_INCREMENT,
+  `fecha_modificacion` DATE NOT NULL,
+  `contador_fecha` TINYINT(3) NOT NULL,
+  PRIMARY KEY (`validacion_id`),
+  UNIQUE INDEX `validacion_id_UNIQUE` (`validacion_id` ASC) VISIBLE);
+
+---
+CREATE TABLE `Spotify`.`Album` (
+  `album_id` INT NOT NULL AUTO_INCREMENT,
+  `titulo_album` VARCHAR(100) NOT NULL,
+  `anno_publicacion` DATE NOT NULL,
+  `discografica` VARCHAR(100) NOT NULL,
+  `imagen_portada` VARCHAR(300) NOT NULL,
+  PRIMARY KEY (`album_id`),
+  UNIQUE INDEX `album_id_UNIQUE` (`album_id` ASC) VISIBLE);
+
+---
+CREATE TABLE `Spotify`.`Artista` (
+  `artista_id` INT NOT NULL AUTO_INCREMENT,
+  `nombre_artista` VARCHAR(100) NOT NULL,
+  `imagen_artista` VARCHAR(300) NOT NULL,
+  PRIMARY KEY (`artista_id`),
+  UNIQUE INDEX `artista_id_UNIQUE` (`artista_id` ASC) VISIBLE);
+
+---
+CREATE TABLE `Spotify`.`Discografica` (
+  `discografica_id` INT NOT NULL AUTO_INCREMENT,
+  `nombre_discografica` VARCHAR(100) NOT NULL,
+  `pais_discografica` VARCHAR(50) NOT NULL,
+  PRIMARY KEY (`discografica_id`),
+  UNIQUE INDEX `discografica_id_UNIQUE` (`discografica_id` ASC) VISIBLE);

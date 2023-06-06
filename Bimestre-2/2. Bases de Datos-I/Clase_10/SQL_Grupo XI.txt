@@ -1,0 +1,124 @@
+CLAVES FORANEAS
+
+ALTER TABLE `EL DESCUBIERTO`.`Sucursal`
+DROP FOREIGN KEY `num_legajo`;
+ALTER TABLE `EL DESCUBIERTO`.`Sucursal`
+ADD CONSTRAINT `num_legajo_id`
+FOREIGN KEY (`idSucursal`)
+REFERENCES `EL DESCUBIERTO`.`Empleados` (`idEmpleados`);
+
+ALTER TABLE `EL DESCUBIERTO`.`Cuentas`
+ADD CONSTRAINT `ejecutivo_id`
+FOREIGN KEY (`cuentas_id`)
+REFERENCES `EL DESCUBIERTO`.`ejecutivo` (`idejecutivo`)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION,
+ADD CONSTRAINT `cuenta_corriente_id`
+FOREIGN KEY (`cuentas_id`)
+REFERENCES `EL DESCUBIERTO`.`cuenta corriente` (`idcuenta_corriente`)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION,
+ADD CONSTRAINT `caja_ahorro_id`
+FOREIGN KEY (`cuentas_id`)
+REFERENCES `EL DESCUBIERTO`.`caja de ahorro` (`idcaja_de_ahorro`)
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+ALTER TABLE `EL DESCUBIERTO`.`Prestamo`
+ADD CONSTRAINT `cliente_id`
+FOREIGN KEY ()
+REFERENCES `EL DESCUBIERTO`.`Cliente` ()
+ON DELETE NO ACTION
+ON UPDATE NO ACTION,
+ADD CONSTRAINT `pago_id`
+FOREIGN KEY ()
+REFERENCES `EL DESCUBIERTO`.`pagos` ()
+ON DELETE NO ACTION
+ON UPDATE NO ACTION,
+
+ADD CONSTRAINT `sucursal_id`
+FOREIGN KEY ()
+REFERENCES `EL DESCUBIERTO`.`Sucursal` ()
+ON DELETE NO ACTION
+ON UPDATE NO ACTION;
+
+
+
+
+TABLAS
+
+CREATE TABLE `EL DESCUBIERTO`.`Sucursal` (
+`idSucursal` INT NOT NULL AUTO_INCREMENT,
+`ciudad` VARCHAR(50) NOT NULL,
+`nombre_sucursal` VARCHAR(100) NOT NULL,
+`codigo_postal` INT(10) NOT NULL,
+`pais` VARCHAR(50) NOT NULL,
+PRIMARY KEY (`idSucursal`),
+UNIQUE INDEX `idSucursal_UNIQUE` (`idSucursal` ASC) VISIBLE);
+
+CREATE TABLE `EL DESCUBIERTO`.`Cliente` (
+`idCliente` INT NOT NULL AUTO_INCREMENT,
+`nombre_cliente` VARCHAR(100) NOT NULL,
+`apellido_cliente` VARCHAR(100) NOT NULL,
+`domicilio_cliente` VARCHAR(100) NOT NULL,
+`ciudad_cliente` VARCHAR(50) NOT NULL,
+`pais_cliente` VARCHAR(50) NOT NULL,
+`email_cliente` VARCHAR(100) NOT NULL,
+`telefono` INT(20) NOT NULL,
+PRIMARY KEY (`idCliente`),
+UNIQUE INDEX `idCliente_UNIQUE` (`idCliente` ASC) VISIBLE);
+
+CREATE TABLE `EL DESCUBIERTO`.`ejecutivo` (
+`idejecutivo` INT NOT NULL AUTO_INCREMENT,
+PRIMARY KEY (`idejecutivo`),
+UNIQUE INDEX `idejecutivo_UNIQUE` (`idejecutivo` ASC) VISIBLE);
+
+CREATE TABLE `EL DESCUBIERTO`.`Cuentas` (
+`cuentas_id` INT NOT NULL AUTO_INCREMENT,
+`estado` TINYINT(1) NOT NULL,
+`saldo` BIGINT(15) NOT NULL,
+`historial_cliente` DATETIME NOT NULL,
+PRIMARY KEY (`cuentas_id`),
+UNIQUE INDEX `cuentas_id_UNIQUE` (`cuentas_id` ASC) VISIBLE);
+
+CREATE TABLE `EL DESCUBIERTO`.`cuenta corriente` (
+`idcuenta_corriente` INT NOT NULL AUTO_INCREMENT,
+`descubierto_otorgado` INT(5) NOT NULL,
+UNIQUE INDEX `idcuenta_corriente_UNIQUE` (`idcuenta_corriente` ASC) VISIBLE,
+PRIMARY KEY (`idcuenta_corriente`));
+
+CREATE TABLE `EL DESCUBIERTO`.`caja de ahorro` (
+`idcaja_de_ahorro` INT NOT NULL AUTO_INCREMENT,
+`tipo_interes` FLOAT(5) NOT NULL,
+PRIMARY KEY (`idcaja_de_ahorro`),
+UNIQUE INDEX `idcaja_de_ahorro_UNIQUE` (`idcaja_de_ahorro` ASC) VISIBLE);
+
+CREATE TABLE `EL DESCUBIERTO`.`Prestamo` (
+`idPrestamo` INT NOT NULL AUTO_INCREMENT,
+`fecha_prestamo` DATE NOT NULL,
+`importe_prestamo` INT(15) NOT NULL,
+`cuotas_prestamo` TINYINT(2) NOT NULL,
+PRIMARY KEY (`idPrestamo`),
+UNIQUE INDEX `idPrestamo_UNIQUE` (`idPrestamo` ASC) VISIBLE);
+
+CREATE TABLE `EL DESCUBIERTO`.`pagos` (
+`idpagos` INT NOT NULL AUTO_INCREMENT,
+`numero_cuota` TINYINT(2) NOT NULL,
+`fecha_hora_pago` DATETIME NOT NULL,
+`importe_pago` INT(10) NOT NULL,
+PRIMARY KEY (`idpagos`),
+UNIQUE INDEX `idpagos_UNIQUE` (`idpagos` ASC) VISIBLE);
+
+CREATE TABLE `EL DESCUBIERTO`.`Empleados` (
+`idEmpleados` INT NOT NULL AUTO_INCREMENT,
+`apellido_empleado` VARCHAR(100) NOT NULL,
+`nombre_empleado` VARCHAR(100) NOT NULL,
+`domicilio_empleado` VARCHAR(100) NOT NULL,
+`ciudad_empleado` VARCHAR(100) NOT NULL,
+`pais_empleado` VARCHAR(50) NOT NULL,
+`email_empleado` VARCHAR(100) NOT NULL,
+`telefono_empleado` INT(20) NOT NULL,
+`fecha_alta_contrato` DATE NOT NULL,
+PRIMARY KEY (`idEmpleados`),
+UNIQUE INDEX `idEmpleados_UNIQUE` (`idEmpleados` ASC) VISIBLE,
+UNIQUE INDEX `telefono_UNIQUE` (`telefono_empleado` ASC) VISIBLE);
