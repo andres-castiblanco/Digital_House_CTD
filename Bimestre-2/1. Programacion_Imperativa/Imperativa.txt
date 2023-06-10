@@ -56,3 +56,6 @@ let triplicar = function (numero) {
 	return numero * 3;
 }
 
+Llamamos parámetros a las variables que escribimos cuando definimos la función. 
+Llamamos argumentos a los valores que enviamos cuando invocamos la función.
+

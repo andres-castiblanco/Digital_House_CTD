@@ -78,7 +78,10 @@ const prompt = require("prompt-sync")({sigint: true});
 // let tipodato = parseInt(parseFloat(prompt("Ingrese una frase o un numero: ")));
 // let tipodato = prompt("Ingrese una frase o un numero: ");
 
-function deParametroAtipoDato(tipodato) {return typeof tipodato;}
+function deParametroAtipoDato(tipodato) {
+    return typeof tipodato;
+}
+
 console.log(deParametroAtipoDato(2.32));
 //console.log(deParametroAtipoDato(tipodato));
 

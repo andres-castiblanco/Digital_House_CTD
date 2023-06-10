@@ -1,0 +1,177 @@
+**************************************
+*** Resumen y notas dfe JavaScript ***
+**************************************
+
+/ Intalación de Node JS, Visual Studio Code, Navegador (Google Chrome)
+// Extensiones de VS Code: Activitus Bar, TypeScript importer, Error Lens, Better Comments
+// Extensiones de navegador (Google Chrome):  Json Viewer Pro
+// Código de cambio de color de llaves en VS Code:
+
+"bracket-pair-colorizer-2.colors": [
+    "#fafafa",
+    "#9F51B6",
+    "#F7C244",
+    "#F07850",
+    "#9CDD29",
+    "#C497D4"
+],
+
+/ Declaración de variables
+
+let			/ Recomendada por la ultima versión del estandar de ECMAScript
+var 		/ No es recomendable debido a que sobreescribe atributos y se guardan las variables en el objeto global Window	
+contst	  	/ Sentencia para constantes
+
+/ Salidas en consola
+/ GitHub de clase de DG https://github.com/jorgeduje/imperativa-c2-23
+
+
+console.log( _ );
+console.warn( _ );
+console.error( _ );
+console.info( _ ); 
+console.table( {} ó []);
+
+/ Alertas, prompt, confirm se encuentran en el objeto universal window
+
+alert('');
+_ = promp('');
+confirm('');
+
+/ Tipos de datos primitivos
+
+Bolean
+Null
+Undefined	/ Variable sin ser inicializada o sin valor asignado
+Number		/ No difiere entre enteros o numeros flotantes
+String         / '' "" `${}`
+Symbol		/ Es un valor unico que no es igual a ningú otro valor
+
+/ Palabras reservadas
+/ link1: https://mathiasbynens.be/notes/javascript-identifiers
+/ link2: https://mothereff.in/js-variables#%E0%B2%A0%5f%E0%B2%A0
+
+/ Operador para identificar el tipo de variable
+
+console.log( typeof ___ );
+
+/ Arreglos
+
+ley arreglo = arreglo[]
+
+/ Métodos de arreglos
+
+arreglo.length                                          / Retorna la cantidad de elementos del arreglo
+arreglo.forEach( (elemento, indice, arr) => {       
+console.log({elemento, indice, arr})
+} )                                                     / Recorre el arreglo
+arreglo.push()                                          / Adiciona un nuevo elemento y retorna la cantidad de elementos
+arreglo.unshift()                                       / Adiciona un nuevo elemento al comienzo del arreglo y retorna la cantidad de elementos
+arreglo.pop()                                           / Elimina el ultimo elemento en el arreglo y lo retorna
+arreglo.splice(pos, cant)                               / Elimina elementos desde la posición pos y la cantidad de elementos cant
+arreglo.indexOf()                                       / Retorna la posición del elemnto
+
+/ Objetos lineales
+/ link: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+objetoLineal = {clave:valor}
+
+delete objetoLineal.propiedad                                       / Elimina la propiedad del objeto lineal
+const entriesPares = Object.entries( objetoLineal )                 / convierte el objeto lineal a un arreglo de arreglos
+Object.freeze( objetoLineal )                                       / No permite que se le realicen cambios al objeto lineal pero no a las propiedades de objetos internos
+const propiedades = Object.getOwnPropertyNames( objetoLineal )      / Retorna las claves del objeto
+const valores = Object.values( objetoLineal )                       / Retorna los valores del objeto
+
+/ Funciones anónimas
+
+const nombreFuncion = function( argumentos ){}                      / por seguridad en el uso de nombres de variables y funciones se recomienda declararlas así
+
+/ Funcion flecha
+
+const flechaFuncion = ( argumentos ) => { cuerpo }                  / declaración de la función tipo flecha
+
+/ El paso por referencia solo ocurre para tipos de datos no primitivos de resto se suministran valores
+
+/ Para remover la referencia entre dos objetos es {...nombreObjeto} 
+/ Para remover la referencia entre dos arreglos es [...nombreArreglo] o con el método .slice()
+
+/ Para captar un tiempo de ejecucion es con:
+console.time('Bandera');
+console.timeEnd('Bandera');
+
+/ Estructuras de control
+if () {} else if () {};
+
+/ Con el operador && ejecuta todo hasta encontrar un false
+/ Con el operador || ejecuta todo hasta encontrar un true
+
+/ Operador ternario
+nombreVariable = ( condicion )? expresionTrue : expresionFalse;
+
+/ Sentencia Switch toma como condicional un === toma en cuenta el tipo de dato
+
+switch( miVariable) {
+    case 0: break;
+    case 1: break;
+    default:
+}
+
+/ while                                     / se ejecuta siempre y cuando la condicion sea true, los valores undefined, null y false salen del ciclo
+
+while( condicion ) {break; continue;};
+
+/ Do while                                  / se ejecuta siempre una vez y cuando la condicion sea true, los valores undefined, null y false salen del ciclo
+
+do {break; continue;} while( condicion);
+
+/ for
+
+for( ; ; ) {}
+for( in ) {}
+for( of ) {}
+
+/Libreria underscore: https://underscorejs.org/#shuffle
+
+// Conformación de clases antes el EM6 en JS, navegadores inferiores al 2015.
+
+function Persona(nombre, edad) {
+  console.log("Se ejecutó esta línea");
+
+  this.nombre = nombre;
+  this.edad = edad;
+
+  this.inprimir = function () {
+    console.log(`Nombre: ${this.nombre} - edad: ${this.edad}`);
+  };
+}
+
+const maria = new Persona("María", 18);
+maria.inprimir();
+
+// Construcción de clases en JS desd el EM6
+
+class Persona {
+  nombre = "";
+  codigo = "";
+  frase = "";
+
+  constructor(
+    nombre = "Sin nombre",
+    codigo = "Sin código",
+    frase = "Sin frase"
+  ) {
+    this.nombre = nombre;
+    this.codigo = codigo;
+    this.nombre = frase;
+  }
+}
+
+// Instancia de la clase en JS
+const spiderman = new Persona(
+  "Peter Parker",
+  "Spiderman",
+  "Soy tu amigable vecino Spiderman"
+);
+console.log(spiderman);
+
+
