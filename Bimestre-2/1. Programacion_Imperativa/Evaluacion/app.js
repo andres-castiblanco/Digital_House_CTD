@@ -132,8 +132,8 @@ let libros = [
     },
 ];
 
-// 2. Mostrar por consola el array para ver que contenga esos objetos
-console.log(libros);
+// // 2. Mostrar por consola el array para ver que contenga esos objetos
+// console.log(libros);
 
 // 3. Deberás crear una función que reciba el array libros como parámetro, 
 // y si el año de lanzamiento es anterior a 2020, deberá agregar una propiedad a 
