@@ -1,0 +1,86 @@
+//Nombre: Anderson Leal Velez
+//Correo: andersonlealv@gmail.com
+//Camada: 2
+
+// Ejercicio 1
+// Ejecutar ambas funciones e imprimir por consola su resultado.
+// Desarrollar una función para cada uno de las siguientes apartados:
+// 1. Que reciba por parámetro un número entero y retorne su triple.
+
+const triplicar = (numUno) => {
+  return numUno * 3;
+};
+
+let numTriplicado = triplicar(3);
+console.log(`El triple del número ingresado es ${numTriplicado}`);
+
+// Que reciba por parámetro dos números enteros y retorne la multiplicación de ambos.
+
+const multiplicar = (numUno, numDos) => {
+  return numUno * numDos;
+};
+
+let numerosTriplicado = multiplicar(2, 3);
+console.log(`La multiplicación de los dos números es ${numerosTriplicado}`);
+
+// Ejercicio 2
+// 1. Deberás escribir un objeto literal llamado turista que contenga las siguientes propiedades que deberás completar con tus datos:
+//nombre
+//apellido
+//temperatura
+
+const turista = { nombre: "Anderson", apellido: "Leal", temperatura: 36 };
+
+// 2. Teniendo en cuenta los datos del punto número 1:
+// A. Crear una función que reciba por parámetro el objeto y retorne un string en base a las siguientes condiciones :
+//  - Si temperatura es menor a 37:  “puede pasar”,
+//  - Si temperatura es mayor o igual a 37: “no puede pasar“
+
+const paso = (arr) =>
+  arr.temperatura >= 37 ? `no puede pasar` : `puede pasar`;
+
+let pruebaPaso = paso(turista);
+console.log(pruebaPaso);
+
+// Ejercicio 3
+// 1. Dado el siguiente array de objetos:
+
+let paises = [
+  {
+    cantidadDeVisitas: 3,
+    clima: "soleado",
+    habitantes: "212 millones",
+  },
+  {
+    cantidadDeVisitas: 4,
+    clima: "frío",
+    habitantes: "144 millones",
+  },
+  {
+    cantidadDeVisitas: 1,
+    clima: "nublado",
+    habitantes: "329 millones",
+  },
+];
+
+// a.   Crea una función que reciba el array Paises como parámetro,
+//      e incremente en 1 la cantidad de visitas de cada uno de los destinos, llámala siguienteViaje.
+// b.   Mostrar por consola el array de destinos antes y después de la ejecución de la función.
+
+console.log(`--------------------------------------`);
+console.log(`Arreglo antes de ejecutar la función: `);
+console.log(`--------------------------------------`);
+console.log(paises);
+
+const siguienteViaje = (arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    arr[i].cantidadDeVisitas++;
+  }
+  return arr;
+};
+
+let nuevoArreglo = siguienteViaje(paises);
+console.log(`----------------------------------------`);
+console.log(`Arreglo despues de ejecutar la función: `);
+console.log(`----------------------------------------`);
+console.log(nuevoArreglo);
