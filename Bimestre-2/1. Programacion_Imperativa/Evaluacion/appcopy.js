@@ -36,17 +36,42 @@
 //     crearMatriz(3,4)
 //     );
 
+
+// let semaforo = 'rojo';
+
+// switch(semaforo){
+// 	case 'verde':
+// 		console.log('puede cruzar');
+// 		break;
+// 	case 'amarillo':
+// 		console.log('precaucion');
+// 		break;
+// 	case 'rojo':
+// 		console.log('No puede cruzar');
+// 		break;
+// 	default:
+// 		console.log('No funciona el semaforo');
+// 		break;
+// }
+
 // crea una funcion para calcular la nota final de la materia BD
 
-function NotaFinal(item1, item2, item3, item4) {
-    let porcentaje1 = (item1 * 0.60);
-    let porcentaje2 = (item2 * 0.15);
-    let porcentaje3 = (item3 * 0.15);
-    let porcentaje4 = (item4 * 0.10);
+// function NotaFinal(item1, item2, item3, item4) {
+//     let porcentaje1 = (item1 * 0.60);
+//     let porcentaje2 = (item2 * 0.15);
+//     let porcentaje3 = (item3 * 0.15);
+//     let porcentaje4 = (item4 * 0.10);
     
-    let notaFinal = (porcentaje1 + porcentaje2 + porcentaje3 + porcentaje4);
-    return notaFinal;
-    }
+//     let notaFinal = (porcentaje1 + porcentaje2 + porcentaje3 + porcentaje4);
+//     return notaFinal;
+//     }
 
-let notaFinal = NotaFinal(100, 100, 100, 100);
-console.log("La nota final es: " + notaFinal);
+// let notaFinal = NotaFinal(75, 62.5, 80, 100);
+// console.log("La nota final es: " + notaFinal);
+
+let textoSinGuiones = reemplazoFastFast('Este texto es mala onda','mala','buena');
+
+function reemplazoFastFast(textoSinGuiones){
+    return textoSinGuiones.replace('mala', 'buena');
+}
+console.log(textoSinGuiones);
